@@ -52,6 +52,5 @@ app.post('/api/generate', async (req, res) => {
 });
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
-app.get('*', (_req, res) => res.sendFile(path.join(__dirname, 'index.html')));
-
+app.get('/*splat', (_req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 app.listen(port, () => console.log(`AI Video Studio running on port ${port}`));
